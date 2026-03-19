@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caille gourmet du Sahel | Œufs et cailles à Ouagadougou</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+
+    <!-- SEO & Partage Réseaux Sociaux -->
+    <meta name="description" content="Vente d'œufs de caille frais et chair de caille à Ouagadougou. Prix transparents, livraison rapide à Paspanga et partout en ville.">
+    
+    <!-- Configuration Open Graph -->
+    <meta property="og:title" content="Caille gourmet du Sahel - Ouagadougou">
+    <meta property="og:description" content="Commandez vos œufs de caille bio et viande fraîche dès maintenant.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.jpg">
+
+    <!-- Police d'écriture moderne (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Icônes (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2e7d32; /* Vert nature */
+            --accent-color: #fdd835; /* Jaune œuf/soleil */
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        /* Hero Section (Bannière) */
+        header {
+            /* FILTRE SOMBRE POUR LISIBILITÉ DU TEXTE */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/banniere.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #2e7d32; /* Couleur de secours */
+            
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* --- STYLE DU LOGO --- */
+        .logo {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        /* RÈGLE SPÉCIALE POUR MOBILE (Écrans de moins de 768px) */
+        @media (max-width: 768px) {
+            .logo {
+                width: 140px; /* Plus petit pour laisser place au texte */
+                height: 140px;
+                border-width: 4px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+                line-height: 1.2;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            .btn-main {
+                width: 80%; /* Bouton plus large sur mobile pour faciliter le clic */
+                display: block;
+                margin: 15px auto 0;
+            }
+        }
+
+        header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            border: 2px solid #fff;
+        }
+        .btn-main:hover {
+            transform: scale(1.05);
+            background-color: #fbc02d;
+        }
+
+        /* Conteneur large */
+        .container {
+            max-width: 1200px; 
+            width: 95%;
+            margin: auto;
+            padding: 10px;
+            margin-top: -30px; /* Chevauchement léger avec la bannière */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Sections */
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+        }
+
+        /* Cartes de Prix et Services */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 20px;
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .feature-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* Style spécial pour les liens/cartes */
+        a.feature-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+        
+        .price-tag {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 15px 0;
+            display: block;
+        }
+
+        .btn-card {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* STYLE POUR LES PHOTOS DE CONDITIONNEMENT */
+        .packaging-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .packaging-item {
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+        .packaging-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid #eee;
+            transition: transform 0.3s;
+        }
+        .packaging-img:hover {
+            transform: scale(1.03);
+            border-color: var(--primary-color);
+        }
+        .packaging-label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+            display: block;
+        }
+
+        /* Listes */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        /* Témoignages */
+        .testimonial-box {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        /* Contact & Footer */
+        .cta {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+        }
+        .cta h2 {
+            color: #fff;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .btn-contact {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: filter 0.2s;
+        }
+        .btn-contact:hover {
+            filter: brightness(0.9);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            background-color: #333;
+            color: #ccc;
+            margin-top: 40px;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="images/logo.jpg" alt="Logo Caille gourmet du Sahel" class="logo">
+    
+    <!-- TITRE ET TEXTE OPTIMISÉS MARKETING -->
+    <h1>Caille gourmet du Sahel</h1>
+    <p>Œufs frais & cailles bio. De notre élevage à votre table en moins de 24h.</p>
+    
+    <!-- BOUTON D'ACTION PRINCIPAL -->
+    <a href="#tarifs" class="btn-main">Voir les prix & Commander</a>
+</header>
+
+<div class="container">
+
+    <!-- SECTION PRÉSENTATION -->
+    <section>
+        <h2><i class="fas fa-store"></i> Qui sommes-nous ?</h2>
+        <p>
+            <strong>Caille gourmet du Sahel</strong> est votre producteur local à <strong>Ouagadougou</strong>. 
+            Nos produits sont d'une fraîcheur absolue : nos œufs sont généralement ramassés le matin et livrés dans la journée.
+        </p>
+        <div class="features-grid">
+            <!-- CARTE 1 : POINT DE VENTE (CLIQUABLE) -->
+            <a href="https://maps.app.goo.gl/u6sitDbxLkTDCZAh9" target="_blank" class="feature-card" style="background: #e8f5e9;">
+                <div>
+                    <i class="fas fa-map-marked-alt" style="font-size: 2em; color: var(--primary-color);"></i>
+                    <br><strong>Point de vente</strong><br>
+                    <span style="font-size: 0.85em; text-decoration: underline; color: #2e7d32;">(Cliquez pour afficher)</span>
+                </div>
+            </a>
+
+            <!-- CARTE 2 -->
+            <div class="feature-card" style="background: #e8f5e9;">
+                <div>
+                    <i class="fas fa-shield-alt" style="font-size: 2em; color: var(--primary-color);"></i>
+                    <br><strong>Hygiène garantie</strong>
+                </div>
+            </div>
+
+            <!-- CARTE 3 -->
+            <div class="feature-card" style="background: #e8f5e9;">
+                <div>
+                    <i class="fas fa-motorcycle" style="font-size: 2em; color: var(--primary-color);"></i>
+                    <br><strong>Livraison rapide</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION : TARIFS -->
+    <section id="tarifs" style="border-left: 5px solid var(--accent-color);">
+        <h2><i class="fas fa-tags"></i> Nos Tarifs & Offres</h2>
+        <p>Qualité premium, prix transparents. Commandez directement sur WhatsApp.</p>
+        
+        <div class="features-grid">
+            <!-- Carte 1 : Sachet Éco -->
+            <div class="feature-card">
+                <div>
+                    <h3 style="margin: 0; color: #333;">Sachet Éco</h3>
+                    <p style="color: #666; font-size: 0.9em;">30 œufs (Sachet souple)</p>
+                    <span class="price-tag">1 800 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20un%20sachet%20de%2030%20oeufs%20à%201800F." class="btn-card">
+                    <i class="fab fa-whatsapp"></i> Choisir
+                </a>
+            </div>
+
+            <!-- Carte 2 : Boîte Alvéolée -->
+            <div class="feature-card" style="border: 2px solid var(--primary-color);">
+                <div>
+                    <div style="background-color: var(--primary-color); color: white; display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.8em; margin-bottom: 5px;">Recommandé</div>
+                    <h3 style="margin: 0; color: #333;">Boîte Premium</h3>
+                    <p style="color: #666; font-size: 0.9em;">30 œufs (Boîte alvéolée)</p>
+                    <span class="price-tag">2 000 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20une%20boîte%20de%2030%20oeufs%20à%202000F." class="btn-card">
+                    <i class="fab fa-whatsapp"></i> Choisir
+                </a>
+            </div>
+
+            <!-- Carte 3 : Pack Découverte -->
+            <div class="feature-card" style="background: #fffde7; border-color: var(--accent-color);">
+                <div>
+                    <h3 style="margin: 0; color: #333;">Pack Découverte</h3>
+                    <p style="color: #666; font-size: 0.9em;">2 cailles de chair + 18 œufs</p>
+                    <span class="price-tag">3 500 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20commande%20le%20Pack%20Découverte%20à%203500F." class="btn-card" style="background-color: #f9a825;">
+                    <i class="fab fa-whatsapp"></i> Je goûte !
+                </a>
+            </div>
+
+            <!-- Carte 4 : Cailles -->
+            <div class="feature-card">
+                <div>
+                    <h3 style="margin: 0; color: #333;">Cailles de chair</h3>
+                    <p style="color: #666; font-size: 0.9em;">Le lot de 4 (prêtes à cuire)</p>
+                    <span class="price-tag">4 500 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20commande%204%20cailles%20de%20chair%20à%204500F." class="btn-card">
+                    <i class="fab fa-whatsapp"></i> Choisir
+                </a>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 0.85em; color: #888; margin-top: 15px;">
+            *Livraison à 1 000 FCFA à Ouaga.
+        </p>
+    </section>
+
+    <!-- Section Œufs Frais (Info Produit) -->
+    <section>
+        <h2>🥚 Pourquoi consommer nos œufs ?</h2>
+        <ul>
+            <li><strong>Concentration nutritionnelle exceptionnelle :</strong> Nos œufs de caille contiennent 3 à 4 fois plus de vitamines et minéraux que les œufs de poule ordinaires. Riches en phosphore et fer, ils favorisent la concentration et les performances cognitives – un véritable atout pour les enfants en période d'apprentissage.</li>
+            <li><strong>Renforcement immunitaire naturel :</strong> Grâce à leur teneur élevée en vitamines A, B2 et E, ainsi qu'en sélénium, ces petites merveilles soutiennent efficacement vos défenses naturelles au quotidien.</li>
+            <li><strong>Alternative douce et digestible :</strong> Réputés pour leur profil hypoallergénique, nos œufs de caille constituent une excellente option pour les personnes sensibles aux œufs de poule, tout en conservant une qualité nutritionnelle supérieure.</li>
+            <li><strong>Énergie durable :</strong> Véritables concentrés d'énergie naturelle, ils combattent la fatigue sans effets excitants, parfaits pour bien démarrer la journée ou recharger vos batteries.</li>
+        </ul>
+        
+        <!-- BLOC MIS EN FORME -->
+        <p style="background-color: #e8f5e9; border-left: 5px solid #2e7d32; color: #1b5e20; padding: 15px; border-radius: 6px; font-weight: bold; margin-top: 25px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <i class="fas fa-heart" style="color: #e53935; margin-right: 8px; font-size: 1.2em;"></i>
+            Idéal pour les enfants, les femmes enceintes et les sportifs !
+        </p>
+        
+        <!-- CONDITIONNEMENT AVEC IMAGES -->
+        <div style="margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">📦 Nos Conditionnements</h3>
+            
+            <div class="packaging-grid">
+                <!-- Sachet -->
+                <div class="packaging-item">
+                    <img src="images/sachet30.jpg" alt="Sachet souple 30 œufs" class="packaging-img">
+                    <span class="packaging-label">Sachet souple (Éco)</span>
+                </div>
+                
+                <!-- Boîte -->
+                <div class="packaging-item">
+                    <img src="images/boite30.jpg" alt="Boîte alvéolée 30 œufs" class="packaging-img">
+                    <span class="packaging-label">Boîte alvéolée (Premium)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOUVELLE SECTION COSMÉTIQUE AJOUTÉE -->
+    <section>
+        <h2>✨ Secret de beauté (Cosmétique)</h2>
+        <p>Le saviez-vous ? L'œuf de caille n'est pas seulement un super-aliment, c'est aussi un allié précieux pour votre routine beauté naturelle.</p>
+        <ul>
+            <li><strong>Peau éclatante & Cheveux vigoureux :</strong> Le jaune d'œuf de caille, particulièrement riche en nutriments, est prisé en cosmétique pour ses propriétés hydratantes, fortifiantes et réparatrices.</li>
+        </ul>
+        
+        <!-- RECETTE MISE A JOUR -->
+        <div style="background-color: #fff8e1; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px dashed #fdd835;">
+            <strong>💡 Idée Recette - Masque Capillaire Fortifiant :</strong><br>
+            Mélangez 2 jaunes d'œufs de caille avec une cuillère à soupe d'huile de coco ou de karité. Appliquez sur les cheveux, laissez poser 20 min puis rincez.
+            
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95em;">
+                ✨ Riche en protéines, acides aminés et vitamines, l'œuf de caille renforce la fibre capillaire et apporte brillance et vitalité à chaque utilisation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Œufs Fécondés -->
+    <section>
+        <h2>🐣 Œufs fécondés (éleveurs)</h2>
+        <p>Vous lancez votre élevage ? Ne prenez pas de risques avec des œufs de qualité douteuse.</p>
+        <ul>
+            <li><strong>Souches rigoureusement sélectionnées :</strong> Nous proposons des œufs issus de souches performantes (Jumbo ou Texas) reconnues pour leur robustesse, leur croissance harmonieuse et leur productivité.</li>
+            <li><strong>Fertilité contrôlée :</strong> Le taux de fertilité de nos reproducteurs fait l'objet de tests réguliers afin d'assurer la qualité et la viabilité des œufs fécondés que vous recevez.</li>
+            <li><strong>Conservation et livraison optimales :</strong> Nos œufs sont conservés dans des conditions idéales de température et d'humidité avant expédition, ce qui maximise vos chances de réussite lors de l'incubation.</li>
+            <li><strong>Accompagnement personnalisé :</strong> Que vous débutiez ou que vous cherchiez à développer votre cheptel, nous restons disponibles pour vous conseiller sur les bonnes pratiques d'incubation et d'élevage.</li>
+        </ul>
+        <div style="text-align: center; margin-top: 15px;">
+             <a href="https://wa.me/22678916975?text=Bonjour,%20je%20veux%20des%20oeufs%20fécondés%20pour%20l'élevage." style="color: var(--primary-color); font-weight: bold; text-decoration: underline;">Demander un devis éleveur</a>
+        </div>
+    </section>
+
+    <!-- Section Viande -->
+    <section>
+        <h2>🍗 Cailles de chair (prêtes à cuire)</h2>
+        <p>Marre du poulet standard ? Épatez vos invités avec nos cailles tendres.</p>
+        <div class="features-grid">
+            <div style="text-align: left;">
+                <ul>
+                    <li><strong>Propre & Net :</strong> Plumées et vidées méticuleusement.</li>
+                    <li><strong>Tendre :</strong> Chair délicate, goût subtil de gibier.</li>
+                    <li><strong>Diététique :</strong> Très pauvre en cholestérol.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TÉMOIGNAGES -->
+    <section style="background-color: #fff8e1;">
+        <h2><i class="fas fa-star"></i> Ils nous font confiance</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 10px;">
+            
+            <div class="testimonial-box" style="flex: 1; min-width: 250px;">
+                <i class="fas fa-quote-left" style="color: var(--primary-color); opacity: 0.5;"></i>
+                <p style="font-style: italic; margin: 10px 0;">"Les œufs sont toujours très frais. Ma femme les utilise pour les bouillies de notre bébé. Livraison rapide à Karpala."</p>
+                <p style="margin-bottom: 0;"><strong>- M. Ouedraogo</strong></p>
+            </div>
+
+            <div class="testimonial-box" style="flex: 1; min-width: 250px;">
+                <i class="fas fa-quote-left" style="color: var(--primary-color); opacity: 0.5;"></i>
+                <p style="font-style: italic; margin: 10px 0;">"J'ai pris le pack découverte pour goûter. La viande était bien nettoyée et savoureuse. Je recommande."</p>
+                <p style="margin-bottom: 0;"><strong>- Mme. Sore</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT (Bouton Itinéraire supprimé) -->
+    <section id="contact" class="cta">
+        <h2>Passez commande aujourd’hui !</h2>
+        <p>
+            📍 <strong>Localisation :</strong> Paspanga, Ouagadougou<br>
+            (À proximité de la Pharmacie des Écoles)
+        </p>
+        
+        <div class="contact-methods">
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20passer%20une%20commande." class="btn-contact" style="background-color: #25D366; color: white;">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            
+            <!-- TÉLÉPHONE -->
+            <a href="tel:+22665982927" class="btn-contact" style="background-color: #fff; color: var(--primary-color);">
+                <i class="fas fa-phone-alt"></i> 65 98 29 27
+            </a>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 – Caille gourmet du Sahel. Tous droits réservés.</p>
+    <p>
+        Mangez sain, mangez local <i class="fas fa-heart" style="color: #e53935;"></i>
+    </p>
+    <!-- LIEN FACEBOOK -->
+    <p style="margin-top: 10px;">
+        Suivez-nous : 
+        <a href="https://web.facebook.com/profile.php?id=61585685010615" style="color: #fff; text-decoration: none; margin-left: 5px; font-size: 1.2em;" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </p>
+</footer>
+
+<!-- Bouton flottant WhatsApp -->
+<a href="https://wa.me/22678916975?text=Bonjour,%20j'ai%20une%20question" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
