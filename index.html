@@ -242,6 +242,34 @@
             display: block;
         }
 
+        /* STYLE POUR LA GRILLE DE LIVRAISON */
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .delivery-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .delivery-km {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .delivery-price {
+            display: block;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
         /* Listes */
         ul {
             list-style: none;
@@ -450,46 +478,42 @@
             *Livraison à partir de 1 000 FCFA à Ouaga.
         </p>
 
-        <!-- DÉBUT DU CALCULATEUR DE LIVRAISON -->
-        <div style="background-color: #f1f8e9; border: 2px dashed var(--primary-color); border-radius: 10px; padding: 20px; max-width: 600px; margin: 30px auto 10px; text-align: center;">
-            <h3 style="color: var(--primary-color); margin-top: 0; margin-bottom: 15px;">
-                <i class="fas fa-motorcycle"></i> Estimer ma livraison
+        <!-- NOUVEAU BLOC DE LIVRAISON BASÉ SUR LA DISTANCE -->
+        <div style="background-color: #f1f8e9; border: 2px dashed var(--primary-color); border-radius: 10px; padding: 25px; max-width: 800px; margin: 30px auto 10px; text-align: center;">
+            <h3 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                <i class="fas fa-motorcycle"></i> Tarifs de livraison
             </h3>
-            <p style="font-size: 0.9em; color: #555; margin-bottom: 15px;">Sélectionnez votre groupe pour voir le tarif de nos livreurs (depuis Paspanga).</p>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">
+                Notre livraison est calculée au kilomètre près, selon la <strong>distance par la route</strong> entre notre ferme (Paspanga) et votre position GPS exacte.
+            </p>
             
-            <select id="zoneSelect" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif; font-size: 1em; margin-bottom: 15px;" onchange="calculerLivraison()">
-                <option value="0">-- Choisissez votre groupe / quartier --</option>
-                <!-- Ajout des "..." à la fin de chaque ligne comme demandé -->
-                <option value="1000">Groupe 1 (Paspanga, Koulouba, Centre-ville, Dapoya, Ouidi, Kamsaoghin, Samandin, ZAD...)</option>
-                <option value="1500">Groupe 2 (Dassasgho, Wemtenga, 1200 Logements, Zone du Bois, Somgandé, Larlé, Gounghin, Patte d'Oie...)</option>
-                <option value="2000">Groupe 3 (Karpala, Rayongo, Wayalghin, Tanghin, Tampouy, Pissy, Cissin, Ouaga 2000...)</option>
-                <option value="2500">Groupe 4 (Saaba, Gampéla, Balkuy, Tingandogo, Nagrin, Zagtouli, Yagma, Bassinko, Kamboinsin...)</option>
-            </select>
-
-            <div id="resultatLivraison" style="display: none; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <p style="margin: 0; font-size: 1.1em;">Frais de livraison estimés :</p>
-                <strong style="font-size: 1.5em; color: #e53935;" id="prixLivraison">0 FCFA</strong>
+            <div class="delivery-grid">
+                <div class="delivery-box">
+                    <span class="delivery-km">De 0 à 5 km</span>
+                    <span class="delivery-price">1 000 FCFA</span>
+                </div>
+                <div class="delivery-box">
+                    <span class="delivery-km">De 6 à 10 km</span>
+                    <span class="delivery-price">1 500 FCFA</span>
+                </div>
+                <div class="delivery-box">
+                    <span class="delivery-km">De 11 à 15 km</span>
+                    <span class="delivery-price">2 000 FCFA</span>
+                </div>
+                <div class="delivery-box">
+                    <span class="delivery-km">De 16 à 20 km</span>
+                    <span class="delivery-price">2 500 FCFA</span>
+                </div>
             </div>
+
+            <p style="margin-top: 20px; font-weight: bold; color: #333;">
+                👉 Envoyez-nous simplement votre position sur WhatsApp pour connaître votre tarif !
+            </p>
+            <a href="https://wa.me/22678916975?text=Bonjour,%20voici%20ma%20position%20pour%20calculer%20ma%20livraison%20:" class="btn-card" style="margin-top: 5px; background-color: #25D366; color: white; border: none;">
+                <i class="fab fa-whatsapp"></i> Partager ma position
+            </a>
         </div>
-
-        <script>
-            function calculerLivraison() {
-                var select = document.getElementById("zoneSelect");
-                var resultatDiv = document.getElementById("resultatLivraison");
-                var prixTexte = document.getElementById("prixLivraison");
-                var prix = select.value;
-
-                if (prix !== "0") {
-                    // Formater le prix avec un espace pour les milliers (ex: 1 500)
-                    var prixFormate = new Intl.NumberFormat('fr-FR').format(prix);
-                    prixTexte.innerText = prixFormate + " FCFA";
-                    resultatDiv.style.display = "block";
-                } else {
-                    resultatDiv.style.display = "none";
-                }
-            }
-        </script>
-        <!-- FIN DU CALCULATEUR DE LIVRAISON -->
+        <!-- FIN DU NOUVEAU BLOC DE LIVRAISON -->
 
     </section>
 
