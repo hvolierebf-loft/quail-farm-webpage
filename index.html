@@ -445,9 +445,52 @@
                 </a>
             </div>
         </div>
+        
         <p style="text-align: center; font-size: 0.85em; color: #888; margin-top: 15px;">
             *Livraison à partir de 1 000 FCFA à Ouaga.
         </p>
+
+        <!-- DÉBUT DU CALCULATEUR DE LIVRAISON -->
+        <div style="background-color: #f1f8e9; border: 2px dashed var(--primary-color); border-radius: 10px; padding: 20px; max-width: 600px; margin: 30px auto 10px; text-align: center;">
+            <h3 style="color: var(--primary-color); margin-top: 0; margin-bottom: 15px;">
+                <i class="fas fa-motorcycle"></i> Estimer ma livraison
+            </h3>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 15px;">Sélectionnez votre groupe pour voir le tarif de nos livreurs (depuis Paspanga).</p>
+            
+            <select id="zoneSelect" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif; font-size: 1em; margin-bottom: 15px;" onchange="calculerLivraison()">
+                <option value="0">-- Choisissez votre groupe / quartier --</option>
+                <!-- Ajout des "..." à la fin de chaque ligne comme demandé -->
+                <option value="1000">Groupe 1 (Paspanga, Koulouba, Centre-ville, Dapoya, Ouidi, Kamsaoghin, Samandin, ZAD...)</option>
+                <option value="1500">Groupe 2 (Dassasgho, Wemtenga, 1200 Logements, Zone du Bois, Somgandé, Larlé, Gounghin, Patte d'Oie...)</option>
+                <option value="2000">Groupe 3 (Karpala, Rayongo, Wayalghin, Tanghin, Tampouy, Pissy, Cissin, Ouaga 2000...)</option>
+                <option value="2500">Groupe 4 (Saaba, Gampéla, Balkuy, Tingandogo, Nagrin, Zagtouli, Yagma, Bassinko, Kamboinsin...)</option>
+            </select>
+
+            <div id="resultatLivraison" style="display: none; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <p style="margin: 0; font-size: 1.1em;">Frais de livraison estimés :</p>
+                <strong style="font-size: 1.5em; color: #e53935;" id="prixLivraison">0 FCFA</strong>
+            </div>
+        </div>
+
+        <script>
+            function calculerLivraison() {
+                var select = document.getElementById("zoneSelect");
+                var resultatDiv = document.getElementById("resultatLivraison");
+                var prixTexte = document.getElementById("prixLivraison");
+                var prix = select.value;
+
+                if (prix !== "0") {
+                    // Formater le prix avec un espace pour les milliers (ex: 1 500)
+                    var prixFormate = new Intl.NumberFormat('fr-FR').format(prix);
+                    prixTexte.innerText = prixFormate + " FCFA";
+                    resultatDiv.style.display = "block";
+                } else {
+                    resultatDiv.style.display = "none";
+                }
+            }
+        </script>
+        <!-- FIN DU CALCULATEUR DE LIVRAISON -->
+
     </section>
 
     <!-- Section Œufs Frais (Info Produit) -->
@@ -554,7 +597,7 @@
         </div>
     </section>
 
-    <!-- CONTACT (Bouton Itinéraire supprimé) -->
+    <!-- CONTACT -->
     <section id="contact" class="cta">
         <h2>Passez commande aujourd’hui !</h2>
         <p>
