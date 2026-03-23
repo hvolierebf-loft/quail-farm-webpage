@@ -270,6 +270,37 @@
             color: var(--primary-color);
         }
 
+        /* STYLE POUR L'ACCORDÉON DE LIVRAISON */
+        .delivery-details {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .delivery-details summary {
+            cursor: pointer;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 12px 25px;
+            background-color: #e8f5e9;
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid var(--primary-color);
+            transition: 0.3s;
+            list-style: none; /* Masquer la flèche par défaut */
+            outline: none;
+            font-size: 1.05em;
+        }
+        .delivery-details summary::-webkit-details-marker {
+            display: none; /* Masquer la flèche sur Safari/Chrome */
+        }
+        .delivery-details summary:hover {
+            background-color: #c8e6c9;
+        }
+        .delivery-details[open] summary {
+            margin-bottom: 10px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
         /* Listes */
         ul {
             list-style: none;
@@ -478,7 +509,7 @@
             *Livraison à partir de 1 000 FCFA à Ouaga.
         </p>
 
-        <!-- NOUVEAU BLOC DE LIVRAISON BASÉ SUR LA DISTANCE -->
+        <!-- NOUVEAU BLOC DE LIVRAISON BASÉ SUR LA DISTANCE AVEC ACCORDÉON -->
         <div style="background-color: #f1f8e9; border: 2px dashed var(--primary-color); border-radius: 10px; padding: 25px; max-width: 800px; margin: 30px auto 10px; text-align: center;">
             <h3 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
                 <i class="fas fa-motorcycle"></i> Tarifs de livraison
@@ -487,26 +518,31 @@
                 Notre livraison est calculée au kilomètre, selon la <strong>distance par la route</strong> entre notre point de vente (Paspanga) et votre position GPS.
             </p>
             
-            <div class="delivery-grid">
-                <div class="delivery-box">
-                    <span class="delivery-km">De 0 à 5 km</span>
-                    <span class="delivery-price">1 000 FCFA</span>
+            <!-- ACCORDÉON (Détails cachés par défaut) -->
+            <details class="delivery-details">
+                <summary>Voir la grille des tarifs 🔽</summary>
+                
+                <div class="delivery-grid">
+                    <div class="delivery-box">
+                        <span class="delivery-km">De 0 à 5 km</span>
+                        <span class="delivery-price">1 000 FCFA</span>
+                    </div>
+                    <div class="delivery-box">
+                        <span class="delivery-km">De 6 à 10 km</span>
+                        <span class="delivery-price">1 500 FCFA</span>
+                    </div>
+                    <div class="delivery-box">
+                        <span class="delivery-km">De 11 à 15 km</span>
+                        <span class="delivery-price">2 000 FCFA</span>
+                    </div>
+                    <div class="delivery-box">
+                        <span class="delivery-km">De 16 à 20 km</span>
+                        <span class="delivery-price">2 500 FCFA</span>
+                    </div>
                 </div>
-                <div class="delivery-box">
-                    <span class="delivery-km">De 6 à 10 km</span>
-                    <span class="delivery-price">1 500 FCFA</span>
-                </div>
-                <div class="delivery-box">
-                    <span class="delivery-km">De 11 à 15 km</span>
-                    <span class="delivery-price">2 000 FCFA</span>
-                </div>
-                <div class="delivery-box">
-                    <span class="delivery-km">De 16 à 20 km</span>
-                    <span class="delivery-price">2 500 FCFA</span>
-                </div>
-            </div>
+            </details>
 
-            <p style="margin-top: 20px; font-weight: bold; color: #333;">
+            <p style="margin-top: 10px; font-weight: bold; color: #333;">
                 👉 Envoyez-nous simplement votre position sur WhatsApp pour connaître votre tarif !
             </p>
             <a href="https://wa.me/22678916975?text=Bonjour,%20voici%20ma%20position%20pour%20calculer%20ma%20livraison%20:" class="btn-card" style="margin-top: 5px; background-color: #25D366; color: white; border: none;">
