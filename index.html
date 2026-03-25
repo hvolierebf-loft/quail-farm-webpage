@@ -109,8 +109,8 @@
         }
 
         .btn-main {
-            background-color: var(--accent-color);
-            color: #000;
+            background-color: #25D366; /* Vert WhatsApp */
+            color: #fff;
             padding: 15px 40px;
             font-size: 1.1em;
             text-decoration: none;
@@ -123,7 +123,7 @@
         }
         .btn-main:hover {
             transform: scale(1.05);
-            background-color: #fbc02d;
+            background-color: #1ebe53; /* Vert WhatsApp foncé au survol */
         }
 
         /* Conteneur large */
@@ -132,7 +132,7 @@
             width: 95%;
             margin: auto;
             padding: 10px;
-            margin-top: -30px; /* Chevauchement léger avec la bannière */
+            margin-top: 30px; /* Espacement corrigé pour ne plus toucher la bannière */
             position: relative;
             z-index: 10;
         }
@@ -409,7 +409,9 @@
     <p>Œufs frais & cailles bio. De notre élevage à votre table en moins de 24h.</p>
     
     <!-- BOUTON D'ACTION PRINCIPAL -->
-    <a href="#tarifs" class="btn-main">Voir les prix & Commander</a>
+    <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20passer%20une%20commande." target="_blank" class="btn-main">
+        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+    </a>
 </header>
 
 <div class="container">
@@ -510,7 +512,7 @@
         </p>
 
         <!-- NOUVEAU BLOC DE LIVRAISON BASÉ SUR LA DISTANCE AVEC ACCORDÉON -->
-        <div style="background-color: #f1f8e9; border: 2px dashed var(--primary-color); border-radius: 10px; padding: 25px; max-width: 800px; margin: 30px auto 10px; text-align: center;">
+        <div style="background-color: #f1f8e9; border: 1px solid #c8e6c9; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 25px; max-width: 800px; margin: 30px auto 10px; text-align: center;">
             <h3 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
                 <i class="fas fa-motorcycle"></i> Tarifs de livraison
             </h3>
@@ -553,9 +555,33 @@
 
     </section>
 
+    <!-- NOUVEAU : PIÈGE DE CONVERSION WHATSAPP -->
+    <section style="background-color: #e8f5e9; text-align: center; border: 1px solid #c8e6c9;">
+        <h2 style="border-bottom: none;"><i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2em;"></i> Ne ratez aucun de nos produits de la ferme !</h2>
+        
+        <p style="font-size: 1.1em; margin-bottom: 20px;">
+            Rejoignez notre liste de diffusion VIP sur WhatsApp pour être informé(e) en priorité :
+        </p>
+        
+        <div style="text-align: left; display: inline-block; margin: 0 auto 20px auto;">
+            <ul style="margin: 0;">
+                <li>Nos promotions exclusives</li>
+                <li>Nouveaux stocks d'œufs ultra-frais</li>
+                <li>Nos offres spéciales (Pack Découverte, etc.)</li>
+            </ul>
+        </div>
+        <br>
+        
+        <a href="https://wa.me/22678916975?text=INFO" class="btn-main">
+            <i class="fab fa-whatsapp"></i> Recevoir les offres
+        </a>
+        <p style="font-size: 0.85em; color: #666; margin-top: 15px; margin-bottom: 0;">*100% gratuit, désinscription à tout moment.</p>
+    </section>
+    <!-- FIN DU PIÈGE DE CONVERSION -->
+
     <!-- Section Œufs Frais (Info Produit) -->
     <section>
-        <h2>🥚 Pourquoi consommer nos œufs ?</h2>
+        <h2>🥚 Pourquoi consommer les œufs de caille ?</h2>
         <ul>
             <li><strong>Concentration nutritionnelle exceptionnelle :</strong> Nos œufs de caille contiennent 3 à 4 fois plus de vitamines et minéraux que les œufs de poule ordinaires. Riches en phosphore et fer, ils favorisent la concentration et les performances cognitives – un véritable atout pour les enfants en période d'apprentissage.</li>
             <li><strong>Renforcement immunitaire naturel :</strong> Grâce à leur teneur élevée en vitamines A, B2 et E, ainsi qu'en sélénium, ces petites merveilles soutiennent efficacement vos défenses naturelles au quotidien.</li>
@@ -597,7 +623,7 @@
             <li><strong>Peau éclatante & Cheveux vigoureux :</strong> Le jaune d'œuf de caille, particulièrement riche en nutriments, est prisé en cosmétique pour ses propriétés hydratantes, fortifiantes et réparatrices.</li>
         </ul>
         
-        <div style="background-color: #fff8e1; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px dashed #fdd835;">
+        <div style="background-color: #fff8e1; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid #fbc02d; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
             <strong>💡 Idée Recette - Masque Capillaire Fortifiant :</strong><br>
             Mélangez 2 jaunes d'œufs de caille avec une cuillère à soupe d'huile de coco ou de karité. Appliquez sur les cheveux, laissez poser 20 min puis rincez.
             
@@ -661,8 +687,7 @@
     <section id="contact" class="cta">
         <h2>Passez commande aujourd’hui !</h2>
         <p>
-            📍 <strong>Localisation :</strong> Paspanga, Ouagadougou<br>
-            (À proximité de la Pharmacie des Écoles)
+            📍 <strong>Paspanga, Ouagadougou</strong>
         </p>
         
         <div class="contact-methods">
