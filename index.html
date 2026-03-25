@@ -301,6 +301,20 @@
             color: white;
         }
 
+        /* URGENCY BANNER (NOUVEAU) */
+        .urgency-banner {
+            background-color: #fff8e1; 
+            color: #d84315; 
+            padding: 12px 20px; 
+            border-radius: 8px; 
+            border-left: 4px solid #ff9800; 
+            font-weight: 600; 
+            margin: 15px auto; 
+            display: inline-block; 
+            text-align: left;
+            font-size: 0.95em;
+        }
+
         /* Listes */
         ul {
             list-style: none;
@@ -462,11 +476,16 @@
     </section>
 
     <!-- SECTION : TARIFS -->
-    <section id="tarifs" style="border-left: 5px solid var(--accent-color);">
+    <section id="tarifs" style="border-left: 5px solid var(--accent-color); text-align: center;">
         <h2><i class="fas fa-tags"></i> Nos Tarifs & Offres</h2>
         <p>Qualité premium, prix transparents. Commandez directement sur WhatsApp.</p>
         
-        <div class="features-grid">
+        <!-- NOUVEAU : ENCART D'URGENCE -->
+        <div class="urgency-banner">
+            <i class="fas fa-stopwatch"></i> <strong>Production artisanale :</strong> Nos œufs frais du matin partent vite. Réservez tôt pour garantir votre livraison !
+        </div>
+        
+        <div class="features-grid" style="text-align: center;">
             <!-- Carte 1 : Sachet Éco -->
             <div class="feature-card">
                 <div>
@@ -492,7 +511,7 @@
                 </a>
             </div>
 
-            <!-- Carte 3 : Pack Découverte (Mise à jour du style) -->
+            <!-- Carte 3 : Pack Découverte -->
             <div class="feature-card">
                 <div>
                     <h3 style="margin: 0; color: #333;">Pack Découverte</h3>
