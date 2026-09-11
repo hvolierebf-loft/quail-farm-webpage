@@ -70,11 +70,16 @@
         /* RÈGLE SPÉCIALE POUR MOBILE (Écrans de moins de 768px) */
         @media (max-width: 768px) {
             .logo {
-                width: 140px; /* Plus petit pour laisser place au texte */
-                height: 140px;
-                border-width: 4px;
+                width: 100px; /* Taille optimisée pour libérer l'écran */
+                height: 100px;
+                border-width: 3px;
+                margin-bottom: 15px;
             }
             
+            header {
+                padding: 40px 15px; /* Un peu moins de vide en haut sur mobile */
+            }
+
             header h1 {
                 font-size: 1.8em;
                 line-height: 1.2;
@@ -82,6 +87,7 @@
 
             header p {
                 font-size: 1.1em;
+                margin-bottom: 20px;
             }
 
             .btn-main {
@@ -309,7 +315,7 @@
             border-radius: 8px; 
             border-left: 4px solid #ff9800; 
             font-weight: 600; 
-            margin: 15px auto; 
+            margin: 15px auto 25px; 
             display: inline-block; 
             text-align: left;
             font-size: 0.95em;
@@ -430,16 +436,6 @@
 
 <div class="container">
 
-    <!-- NOUVELLE SECTION SEO LOCAL -->
-    <section>
-        <h2><i class="fas fa-egg"></i> Œufs de caille à Ouagadougou</h2>
-        <p>
-            Vous recherchez des <strong>œufs de caille frais à Ouagadougou</strong> ? 
-            Caille gourmet du Sahel vous propose des œufs riches en nutriments, 
-            livrés rapidement à domicile dans toute la ville.
-        </p>
-    </section>
-
     <!-- SECTION PRÉSENTATION -->
     <section>
         <h2><i class="fas fa-store"></i> Qui sommes-nous ?</h2>
@@ -475,55 +471,109 @@
         </div>
     </section>
 
-    <!-- SECTION : TARIFS -->
-    <section id="tarifs" style="border-left: 5px solid var(--accent-color); text-align: center;">
-        <h2><i class="fas fa-tags"></i> Nos Tarifs & Offres</h2>
-        <p>Qualité premium, prix transparents. Commandez directement sur WhatsApp.</p>
+    <!-- SECTION 1 : LES ŒUFS (Consommation & Cosmétique) -->
+    <section id="oeufs">
+        <h2><i class="fas fa-egg"></i> Les Œufs de caille (Frais & Bio)</h2>
         
-        <!-- ENCART D'URGENCE -->
-        <div class="urgency-banner">
-            <i class="fas fa-stopwatch"></i> <strong>Production artisanale :</strong> Nos œufs frais du matin partent vite. Réservez tôt pour garantir votre livraison !
+        <!-- Sous-partie Nutrition -->
+        <h3 style="color: #333; margin-top: 20px;">Pourquoi les consommer ?</h3>
+        <ul>
+            <li><strong>Concentration nutritionnelle exceptionnelle :</strong> Riches en phosphore et fer, ils favorisent la concentration et les performances cognitives – un véritable atout pour les enfants.</li>
+            <li><strong>Renforcement immunitaire naturel :</strong> Grâce à leur teneur élevée en vitamines A, B2 et E, ainsi qu'en sélénium, ces petites merveilles soutiennent vos défenses naturelles.</li>
+            <li><strong>Alternative douce et digestible :</strong> Réputés pour leur profil hypoallergénique, nos œufs de caille sont excellents pour les personnes sensibles aux œufs de poule.</li>
+            <li><strong>Énergie durable :</strong> Véritables concentrés d'énergie naturelle, ils combattent la fatigue sans effets excitants.</li>
+        </ul>
+        
+        <p style="background-color: #e8f5e9; border-left: 5px solid #2e7d32; color: #1b5e20; padding: 15px; border-radius: 6px; font-weight: bold; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <i class="fas fa-heart" style="color: #e53935; margin-right: 8px; font-size: 1.2em;"></i>
+            Idéal pour les enfants, les femmes enceintes et les sportifs !
+        </p>
+
+        <!-- Sous-partie Cosmétique -->
+        <h3 style="color: #333; margin-top: 30px;">✨ Secret de beauté (Cosmétique)</h3>
+        <p>Le jaune d'œuf de caille, particulièrement riche en nutriments, est prisé pour ses propriétés hydratantes, fortifiantes et réparatrices pour la peau et les cheveux.</p>
+        <div style="background-color: #fff8e1; padding: 15px; border-radius: 8px; border: 1px solid #fbc02d; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 30px;">
+            <strong>💡 Idée Recette - Masque Capillaire Fortifiant :</strong><br>
+            Mélangez 2 jaunes d'œufs de caille avec une cuillère à soupe d'huile de coco ou de karité. Appliquez sur les cheveux, laissez poser 20 min puis rincez.
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95em;">
+                ✨ Riche en protéines, acides aminés et vitamines, l'œuf de caille renforce la fibre capillaire et apporte brillance et vitalité.
+            </p>
+        </div>
+
+        <!-- TARIFS DES ŒUFS -->
+        <div style="text-align: center; border-top: 1px solid #eee; padding-top: 30px;">
+            <h3 style="color: var(--primary-color); margin-bottom: 10px;">📦 Les Conditionnements de nos Œufs</h3>
+            
+            <div class="packaging-grid">
+                <div class="packaging-item">
+                    <img src="images/sachet30.jpg?v=2" alt="Sachet souple 30 œufs" class="packaging-img">
+                    <span class="packaging-label">Sachet souple (Éco)</span>
+                </div>
+                <div class="packaging-item">
+                    <img src="images/boite30.jpg?v=2" alt="Boîte alvéolée 30 œufs" class="packaging-img">
+                    <span class="packaging-label">Boîte alvéolée (Premium)</span>
+                </div>
+            </div>
+
+            <!-- ENCART D'URGENCE -->
+            <div style="text-align: center; width: 100%;">
+                <div class="urgency-banner">
+                    <i class="fas fa-stopwatch"></i> <strong>Production artisanale :</strong> Nos œufs frais du matin partent vite. Réservez tôt !
+                </div>
+            </div>
+
+            <!-- Cartes de prix associées -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div>
+                        <h3 style="margin: 0; color: #333;">Sachet Éco</h3>
+                        <p style="color: #666; font-size: 0.9em;">30 œufs (Sachet souple)</p>
+                        <span class="price-tag">1 800 FCFA</span>
+                    </div>
+                    <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20un%20sachet%20de%2030%20oeufs%20à%201800F." class="btn-card">
+                        <i class="fab fa-whatsapp"></i> Choisir
+                    </a>
+                </div>
+
+                <div class="feature-card" style="border: 2px solid var(--primary-color);">
+                    <div>
+                        <div style="background-color: var(--primary-color); color: white; display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.8em; margin-bottom: 5px;">Recommandé</div>
+                        <h3 style="margin: 0; color: #333;">Boîte Premium</h3>
+                        <p style="color: #666; font-size: 0.9em;">30 œufs (Boîte alvéolée)</p>
+                        <span class="price-tag">2 000 FCFA</span>
+                    </div>
+                    <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20une%20boîte%20de%2030%20oeufs%20à%202000F." class="btn-card">
+                        <i class="fab fa-whatsapp"></i> Choisir
+                    </a>
+                </div>
+
+                <div class="feature-card" style="background: #fffde7; border-color: var(--accent-color);">
+                    <div>
+                        <h3 style="margin: 0; color: #333;">Pack Découverte</h3>
+                        <p style="color: #666; font-size: 0.9em;">2 cailles de chair + 18 œufs</p>
+                        <span class="price-tag">3 500 FCFA</span>
+                    </div>
+                    <a href="https://wa.me/22678916975?text=Bonjour,%20je%20commande%20le%20Pack%20Découverte%20à%203500F." class="btn-card">
+                        <i class="fab fa-whatsapp"></i> Je goûte !
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : LA VIANDE -->
+    <section id="viande">
+        <h2><i class="fas fa-drumstick-bite"></i> Viande de caille : Prêtes à cuire & Réformes</h2>
+        <p>Marre du poulet standard ? Épatez vos invités ou diversifiez votre menu de maquis avec nos cailles de qualité.</p>
+        <div style="text-align: left;">
+            <ul>
+                <li><strong>Cailles de chair (Prêtes à cuire) :</strong> Plumées et vidées méticuleusement. Chair délicate, très pauvre en cholestérol avec un goût subtil de gibier.</li>
+                <li><strong>Cailles de réforme :</strong> Une volaille économique au goût authentique, parfaite pour les grillades en famille ou pour les gérants de maquis.</li>
+            </ul>
         </div>
         
-        <div class="features-grid" style="text-align: center;">
-            <!-- Carte 1 : Sachet Éco -->
-            <div class="feature-card">
-                <div>
-                    <h3 style="margin: 0; color: #333;">Sachet Éco</h3>
-                    <p style="color: #666; font-size: 0.9em;">30 œufs (Sachet souple)</p>
-                    <span class="price-tag">1 800 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20un%20sachet%20de%2030%20oeufs%20à%201800F." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
-                </a>
-            </div>
-
-            <!-- Carte 2 : Boîte Alvéolée -->
-            <div class="feature-card" style="border: 2px solid var(--primary-color);">
-                <div>
-                    <div style="background-color: var(--primary-color); color: white; display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.8em; margin-bottom: 5px;">Recommandé</div>
-                    <h3 style="margin: 0; color: #333;">Boîte Premium</h3>
-                    <p style="color: #666; font-size: 0.9em;">30 œufs (Boîte alvéolée)</p>
-                    <span class="price-tag">2 000 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20une%20boîte%20de%2030%20oeufs%20à%202000F." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
-                </a>
-            </div>
-
-            <!-- Carte 3 : Pack Découverte -->
-            <div class="feature-card">
-                <div>
-                    <h3 style="margin: 0; color: #333;">Pack Découverte</h3>
-                    <p style="color: #666; font-size: 0.9em;">2 cailles de chair + 18 œufs</p>
-                    <span class="price-tag">3 500 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20commande%20le%20Pack%20Découverte%20à%203500F." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Je goûte !
-                </a>
-            </div>
-
-            <!-- Carte 4 : Cailles -->
+        <!-- TARIFS DE LA VIANDE -->
+        <div class="features-grid" style="justify-content: center;">
             <div class="feature-card">
                 <div>
                     <h3 style="margin: 0; color: #333;">Cailles de chair</h3>
@@ -535,43 +585,6 @@
                 </a>
             </div>
 
-            <!-- Carte 5 : Cailleteaux (1 à 3 jours) -->
-            <div class="feature-card">
-                <div>
-                    <h3 style="margin: 0; color: #333;">Cailleteaux (1 à 3j)</h3>
-                    <p style="color: #666; font-size: 0.9em;">Pour démarrer à petit prix</p>
-                    <span class="price-tag">300 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20des%20cailleteaux%20de%201%20à%203%20jours%20(300F)." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
-                </a>
-            </div>
-
-            <!-- Carte 6 : Cailleteaux (2 semaines) -->
-            <div class="feature-card">
-                <div>
-                    <h3 style="margin: 0; color: #333;">Cailleteaux (2 sem)</h3>
-                    <p style="color: #666; font-size: 0.9em;">Croissance avancée, plus robustes</p>
-                    <span class="price-tag">600 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20des%20cailleteaux%20de%202%20semaines%20(600F)." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
-                </a>
-            </div>
-
-            <!-- Carte 7 : Famille Reproductrice -->
-            <div class="feature-card" style="background: #fffde7; border-color: var(--accent-color);">
-                <div>
-                    <h3 style="margin: 0; color: #333;">Famille de cailles</h3>
-                    <p style="color: #666; font-size: 0.9em;">1 Mâle + 4 Femelles (Début de ponte)</p>
-                    <span class="price-tag">15 000 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20une%20famille%20de%20cailles%20(1M%2B4F)%20à%2015000F." class="btn-card" style="background-color: #f9a825;">
-                    <i class="fab fa-whatsapp"></i> Choisir
-                </a>
-            </div>
-
-            <!-- Carte 8 : Cailles de réforme -->
             <div class="feature-card">
                 <div>
                     <h3 style="margin: 0; color: #333;">Cailles de réforme</h3>
@@ -583,13 +596,64 @@
                 </a>
             </div>
         </div>
-        
-        <p style="text-align: center; font-size: 0.85em; color: #888; margin-top: 15px;">
-            *Livraison à partir de 1 000 FCFA à Ouaga.
-        </p>
+    </section>
 
-        <!-- NOUVEAU BLOC DE LIVRAISON BASÉ SUR LA DISTANCE AVEC ACCORDÉON -->
-        <div style="background-color: #f1f8e9; border: 1px solid #c8e6c9; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 25px; max-width: 800px; margin: 30px auto 10px; text-align: center;">
+    <!-- SECTION 3 : L'ÉLEVAGE -->
+    <section id="elevage">
+        <h2><i class="fas fa-kiwi-bird"></i> Élevage : Cailleteaux, Familles & Œufs fécondés</h2>
+        <p>Vous lancez votre élevage dans votre cour ou de manière professionnelle ? Ne prenez pas de risques avec des sujets de qualité douteuse.</p>
+        <ul>
+            <li><strong>Cailleteaux (1 à 3 jours & 2 semaines) :</strong> Sujets vigoureux issus de nos meilleures souches.</li>
+            <li><strong>Familles "Clé en main" :</strong> Lots de 4 femelles et 1 mâle en début de ponte. La solution idéale pour les fonctionnaires ou retraités désirant produire leurs propres œufs frais à domicile.</li>
+            <li><strong>Œufs fécondés (Jumbo ou Texas) :</strong> Reconnus pour leur robustesse et productivité. Fertilité contrôlée.</li>
+        </ul>
+        
+        <!-- TARIFS DE L'ÉLEVAGE -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div>
+                    <h3 style="margin: 0; color: #333;">Cailleteaux (1 à 3j)</h3>
+                    <p style="color: #666; font-size: 0.9em;">Pour démarrer à petit prix</p>
+                    <span class="price-tag">300 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20des%20cailleteaux%20de%201%20à%203%20jours%20(300F)." class="btn-card">
+                    <i class="fab fa-whatsapp"></i> Choisir
+                </a>
+            </div>
+
+            <div class="feature-card">
+                <div>
+                    <h3 style="margin: 0; color: #333;">Cailleteaux (2 sem)</h3>
+                    <p style="color: #666; font-size: 0.9em;">Croissance avancée, plus robustes</p>
+                    <span class="price-tag">600 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20des%20cailleteaux%20de%202%20semaines%20(600F)." class="btn-card">
+                    <i class="fab fa-whatsapp"></i> Choisir
+                </a>
+            </div>
+
+            <div class="feature-card" style="background: #fffde7; border-color: var(--accent-color);">
+                <div>
+                    <h3 style="margin: 0; color: #333;">Famille de cailles</h3>
+                    <p style="color: #666; font-size: 0.9em;">1 Mâle + 4 Femelles (Début de ponte)</p>
+                    <span class="price-tag">15 000 FCFA</span>
+                </div>
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20une%20famille%20de%20cailles%20(1M%2B4F)%20à%2015000F." class="btn-card" style="background-color: #f9a825;">
+                    <i class="fab fa-whatsapp"></i> Choisir
+                </a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 25px;">
+             <a href="https://wa.me/22678916975?text=Bonjour,%20je%20veux%20un%20devis%20pour%20des%20oeufs%20fécondés." class="btn-main" style="border: none; background-color: var(--primary-color);">
+                 <i class="fas fa-file-invoice"></i> Demander un devis pour Œufs Fécondés
+             </a>
+        </div>
+    </section>
+
+    <!-- SECTION 4 : LIVRAISON -->
+    <section style="background-color: transparent; box-shadow: none; padding: 0;">
+        <div style="background-color: #f1f8e9; border: 1px solid #c8e6c9; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 25px; max-width: 800px; margin: 0 auto; text-align: center;">
             <h3 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
                 <i class="fas fa-motorcycle"></i> Tarifs de livraison
             </h3>
@@ -597,7 +661,6 @@
                 Notre livraison est calculée au kilomètre, selon la <strong>distance par la route</strong> entre notre point de vente (Paspanga) et votre position GPS.
             </p>
             
-            <!-- ACCORDÉON (Détails cachés par défaut) -->
             <details class="delivery-details">
                 <summary>Voir la grille des tarifs 🔽</summary>
                 
@@ -628,11 +691,9 @@
                 <i class="fab fa-whatsapp"></i> Partager ma position
             </a>
         </div>
-        <!-- FIN DU NOUVEAU BLOC DE LIVRAISON -->
-
     </section>
 
-    <!-- NOUVEAU : PIÈGE DE CONVERSION WHATSAPP -->
+    <!-- SECTION 5 : LEAD MAGNET (PIÈGE DE CONVERSION) -->
     <section style="background-color: #e8f5e9; text-align: center; border: 1px solid #c8e6c9;">
         <h2 style="border-bottom: none;"><i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2em;"></i> Ne ratez aucun de nos produits de la ferme !</h2>
         
@@ -654,121 +715,21 @@
         </a>
         <p style="font-size: 0.85em; color: #666; margin-top: 15px; margin-bottom: 0;">*100% gratuit, désinscription à tout moment.</p>
     </section>
-    <!-- FIN DU PIÈGE DE CONVERSION -->
 
-    <!-- Section Œufs Frais (Info Produit) -->
-    <section>
-        <h2>🥚 Pourquoi consommer les œufs de caille ?</h2>
-        <ul>
-            <li><strong>Concentration nutritionnelle exceptionnelle :</strong> Nos œufs de caille contiennent 3 à 4 fois plus de vitamines et minéraux que les œufs de poule ordinaires. Riches en phosphore et fer, ils favorisent la concentration et les performances cognitives – un véritable atout pour les enfants en période d'apprentissage.</li>
-            <li><strong>Renforcement immunitaire naturel :</strong> Grâce à leur teneur élevée en vitamines A, B2 et E, ainsi qu'en sélénium, ces petites merveilles soutiennent efficacement vos défenses naturelles au quotidien.</li>
-            <li><strong>Alternative douce et digestible :</strong> Réputés pour leur profil hypoallergénique, nos œufs de caille constituent une excellente option pour les personnes sensibles aux œufs de poule, tout en conservant une qualité nutritionnelle supérieure.</li>
-            <li><strong>Énergie durable :</strong> Véritables concentrés d'énergie naturelle, ils combattent la fatigue sans effets excitants, parfaits pour bien démarrer la journée ou recharger vos batteries.</li>
-        </ul>
-        
-        <!-- BLOC MIS EN FORME -->
-        <p style="background-color: #e8f5e9; border-left: 5px solid #2e7d32; color: #1b5e20; padding: 15px; border-radius: 6px; font-weight: bold; margin-top: 25px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <i class="fas fa-heart" style="color: #e53935; margin-right: 8px; font-size: 1.2em;"></i>
-            Idéal pour les enfants, les femmes enceintes et les sportifs !
-        </p>
-        
-        <!-- CONDITIONNEMENT AVEC IMAGES + CACHE BUSTING (?v=2) -->
-        <div style="margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
-            <h3 style="color: var(--primary-color); margin-bottom: 20px;">📦 Les Conditionnements de nos Œufs</h3>
-            
-            <div class="packaging-grid">
-                <!-- Sachet -->
-                <div class="packaging-item">
-                    <img src="images/sachet30.jpg?v=2" alt="Sachet souple 30 œufs" class="packaging-img">
-                    <span class="packaging-label">Sachet souple (Éco)</span>
-                </div>
-                
-                <!-- Boîte -->
-                <div class="packaging-item">
-                    <img src="images/boite30.jpg?v=2" alt="Boîte alvéolée 30 œufs" class="packaging-img">
-                    <span class="packaging-label">Boîte alvéolée (Premium)</span>
-                </div>
-            </div>
-            
-            <!-- BOUTON COMMANDER -->
-            <div style="margin-top: 30px;">
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20des%20oeufs%20de%20caille." class="btn-main" style="border: none;">
-                    <i class="fab fa-whatsapp"></i> Commander maintenant
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION COSMÉTIQUE -->
-    <section>
-        <h2>✨ Secret de beauté (Cosmétique)</h2>
-        <p>Le saviez-vous ? L'œuf de caille n'est pas seulement un super-aliment, c'est aussi un allié précieux pour votre routine beauté naturelle.</p>
-        <ul>
-            <li><strong>Peau éclatante & Cheveux vigoureux :</strong> Le jaune d'œuf de caille, particulièrement riche en nutriments, est prisé en cosmétique pour ses propriétés hydratantes, fortifiantes et réparatrices.</li>
-        </ul>
-        
-        <div style="background-color: #fff8e1; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid #fbc02d; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <strong>💡 Idée Recette - Masque Capillaire Fortifiant :</strong><br>
-            Mélangez 2 jaunes d'œufs de caille avec une cuillère à soupe d'huile de coco ou de karité. Appliquez sur les cheveux, laissez poser 20 min puis rincez.
-            
-            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95em;">
-                ✨ Riche en protéines, acides aminés et vitamines, l'œuf de caille renforce la fibre capillaire et apporte brillance et vitalité à chaque utilisation.
-            </p>
-        </div>
-    </section>
-
-    <!-- Section Œufs Fécondés & Élevage -->
-    <section>
-        <h2>🐣 Élevage : Œufs fécondés, Cailleteaux & Familles</h2>
-        <p>Vous lancez votre élevage dans votre cour ou de manière professionnelle ? Ne prenez pas de risques avec des sujets de qualité douteuse.</p>
-        <ul>
-            <li><strong>Cailleteaux (1 à 3 jours & 2 semaines) :</strong> Sujets vigoureux issus de nos meilleures souches. Rejoignez notre groupe WhatsApp "Disponibilités Cailleteaux Ouaga" pour réserver votre bande avant même l'éclosion !</li>
-            <li><strong>Familles "Clé en main" :</strong> Lots de 4 femelles et 1 mâle en début de ponte. La solution idéale pour les fonctionnaires ou retraités désirant produire leurs propres œufs frais à domicile.</li>
-            <li><strong>Œufs fécondés de souches sélectionnées :</strong> Nous proposons des œufs (Jumbo ou Texas) reconnus pour leur robustesse et leur productivité. Fertilité contrôlée régulièrement.</li>
-            <li><strong>Accompagnement personnalisé :</strong> Que vous débutiez ou que vous cherchiez à développer votre cheptel, nous restons disponibles pour vous conseiller sur les bonnes pratiques d'élevage à Ouagadougou.</li>
-        </ul>
-        
-        <!-- BOUTON DEVIS ÉLEVEUR STYLISÉ -->
-        <div style="text-align: center; margin-top: 25px;">
-             <a href="https://wa.me/22678916975?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20vos%20produits%20d'élevage%20(cailleteaux/familles/oeufs)." class="btn-main" style="border: none;">
-                 <i class="fab fa-whatsapp"></i> Nous contacter pour l'élevage
-             </a>
-        </div>
-    </section>
-
-    <!-- Section Viande -->
-    <section>
-        <h2>🍗 Viande de caille : Prêtes à cuire & Réformes</h2>
-        <p>Marre du poulet standard ? Épatez vos invités ou diversifiez votre menu de maquis avec nos cailles de qualité.</p>
-        <div class="features-grid">
-            <div style="text-align: left;">
-                <ul>
-                    <li><strong>Cailles de chair (Prêtes à cuire) :</strong> Plumées et vidées méticuleusement. Chair délicate et très pauvre en cholestérol avec un goût subtil de gibier.</li>
-                    <li><strong>Cailles de réforme (1 000 FCFA l'unité) :</strong> Une volaille économique au goût authentique, parfaite pour les grillades en famille ou pour les gérants de maquis.</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- NOUVEAU BOUTON COMMANDER -->
-        <div style="text-align: center; margin-top: 25px;">
-            <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20de%20la%20viande%20de%20caille." class="btn-main" style="border: none;">
-                <i class="fab fa-whatsapp"></i> Commander maintenant
-            </a>
-        </div>
-    </section>
-
-    <!-- SECTION TÉMOIGNAGES -->
+    <!-- SECTION 6 : TÉMOIGNAGES -->
     <section style="background-color: #fff8e1;">
         <h2><i class="fas fa-star"></i> Ils nous font confiance</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 10px;">
             
             <div class="testimonial-box" style="flex: 1; min-width: 250px;">
+                <div style="color: #fbc02d; font-size: 1.2em; margin-bottom: 5px;">★ ★ ★ ★ ★</div>
                 <i class="fas fa-quote-left" style="color: var(--primary-color); opacity: 0.5;"></i>
                 <p style="font-style: italic; margin: 10px 0;">"Les œufs sont toujours très frais. Ma femme les utilise pour les bouillies de notre bébé. Livraison rapide à Karpala."</p>
                 <p style="margin-bottom: 0;"><strong>- M. Ouedraogo</strong></p>
             </div>
 
             <div class="testimonial-box" style="flex: 1; min-width: 250px;">
+                <div style="color: #fbc02d; font-size: 1.2em; margin-bottom: 5px;">★ ★ ★ ★ ★</div>
                 <i class="fas fa-quote-left" style="color: var(--primary-color); opacity: 0.5;"></i>
                 <p style="font-style: italic; margin: 10px 0;">"J'ai pris le pack découverte pour goûter. La viande était bien nettoyée et savoureuse. Je recommande."</p>
                 <p style="margin-bottom: 0;"><strong>- Mme. Sore</strong></p>
@@ -777,7 +738,7 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- SECTION 7 : CONTACT -->
     <section id="contact" class="cta">
         <h2>Passez commande aujourd’hui !</h2>
         <p>
@@ -785,16 +746,24 @@
         </p>
         
         <div class="contact-methods">
-            <!-- WHATSAPP -->
             <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20passer%20une%20commande." class="btn-contact" style="background-color: #25D366; color: white;">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
             
-            <!-- TÉLÉPHONE -->
             <a href="tel:+22665982927" class="btn-contact" style="background-color: #fff; color: var(--primary-color);">
                 <i class="fas fa-phone-alt"></i> 65 98 29 27
             </a>
         </div>
+    </section>
+
+    <!-- SECTION 8 : SEO TEXT (Caché en bas pour ne pas gêner la lecture) -->
+    <section style="background-color: transparent; box-shadow: none; border-top: 1px solid #ddd; border-radius: 0; margin-bottom: 0; padding-bottom: 0;">
+        <h2 style="font-size: 1.2em; border: none; color: #555;"><i class="fas fa-egg"></i> Œufs de caille à Ouagadougou</h2>
+        <p style="font-size: 0.9em; color: #666;">
+            Vous recherchez des <strong>œufs de caille frais à Ouagadougou</strong> ? 
+            Caille gourmet du Sahel vous propose des œufs riches en nutriments, de la viande tendre et des cailleteaux, 
+            livrés rapidement à domicile dans toute la ville.
+        </p>
     </section>
 
 </div>
@@ -804,7 +773,6 @@
     <p>
         Mangez sain, mangez local <i class="fas fa-heart" style="color: #e53935;"></i>
     </p>
-    <!-- LIEN FACEBOOK -->
     <p style="margin-top: 10px;">
         Suivez-nous : 
         <a href="https://web.facebook.com/profile.php?id=61585685010615" style="color: #fff; text-decoration: none; margin-left: 5px; font-size: 1.2em;" target="_blank">
