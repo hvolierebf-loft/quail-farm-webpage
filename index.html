@@ -207,45 +207,13 @@
         .btn-card {
             background-color: var(--primary-color);
             color: white;
-            padding: 10px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
             margin-top: 10px;
-        }
-
-        /* STYLE POUR LES PHOTOS DE CONDITIONNEMENT */
-        .packaging-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .packaging-item {
-            text-align: center;
-            max-width: 300px;
-            width: 100%;
-        }
-        .packaging-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border: 2px solid #eee;
-            transition: transform 0.3s;
-        }
-        .packaging-img:hover {
-            transform: scale(1.03);
-            border-color: var(--primary-color);
-        }
-        .packaging-label {
-            margin-top: 10px;
-            font-weight: bold;
-            color: #555;
-            display: block;
+            font-size: 0.95em;
         }
 
         /* STYLE POUR LA GRILLE DE LIVRAISON */
@@ -307,7 +275,7 @@
             color: white;
         }
 
-        /* URGENCY BANNER (Mis à jour avec couleurs softs) */
+        /* URGENCY BANNER */
         .urgency-banner {
             background-color: #e8f5e9; 
             color: #1b5e20; 
@@ -437,16 +405,6 @@
 
 <div class="container">
 
-    <!-- SECTION SEO LOCAL -->
-    <section>
-        <h2><i class="fas fa-egg"></i> Œufs de caille à Ouagadougou</h2>
-        <p>
-            Vous recherchez des <strong>œufs de caille frais à Ouagadougou</strong> ? 
-            Caille gourmet du Sahel vous propose des œufs riches en nutriments, 
-            livrés rapidement à domicile dans toute la ville.
-        </p>
-    </section>
-
     <!-- SECTION PRÉSENTATION -->
     <section>
         <h2><i class="fas fa-store"></i> Qui sommes-nous ?</h2>
@@ -534,19 +492,6 @@
 
         <!-- TARIFS DES ŒUFS -->
         <div style="text-align: center; border-top: 1px solid #eee; padding-top: 30px;">
-            <h3 style="color: var(--primary-color); margin-bottom: 10px;">📦 Les Conditionnements de nos Œufs</h3>
-            
-            <div class="packaging-grid">
-                <div class="packaging-item">
-                    <img src="images/sachet30.jpg?v=2" alt="Sachet souple 30 œufs" class="packaging-img">
-                    <span class="packaging-label">Sachet souple (Éco)</span>
-                </div>
-                <div class="packaging-item">
-                    <img src="images/boite30.jpg?v=2" alt="Plaquette 30 œufs" class="packaging-img">
-                    <span class="packaging-label">Plaquette (Premium)</span>
-                </div>
-            </div>
-
             <!-- ENCART D'URGENCE -->
             <div style="text-align: center; width: 100%;">
                 <div class="urgency-banner">
@@ -554,39 +499,16 @@
                 </div>
             </div>
 
-            <!-- Cartes de prix associées -->
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div>
-                        <h3 style="margin: 0; color: #333;">Sachet Éco</h3>
-                        <p style="color: #666; font-size: 0.9em;">30 œufs (sachet souple)</p>
-                        <span class="price-tag">1 800 FCFA</span>
-                    </div>
-                    <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20sachet(s)%20de%2030%20oeufs%20(1800F%20l%27unite)." class="btn-card">
-                        <i class="fab fa-whatsapp"></i> Choisir
-                    </a>
-                </div>
-
+            <!-- Carte de prix associée (centrée) -->
+            <div class="features-grid" style="max-width: 350px; margin: 25px auto 0;">
                 <div class="feature-card" style="border: 2px solid var(--primary-color);">
                     <div>
-                        <div style="background-color: var(--primary-color); color: white; display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.8em; margin-bottom: 5px;">Recommandé</div>
                         <h3 style="margin: 0; color: #333;">Plaquette Premium</h3>
-                        <p style="color: #666; font-size: 0.9em;">30 œufs (plaquette)</p>
+                        <p style="color: #666; font-size: 0.9em;">30 œufs</p>
                         <span class="price-tag">2 000 FCFA</span>
                     </div>
                     <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20plaquette(s)%20de%2030%20oeufs%20(2000F%20l%27unite)." class="btn-card">
-                        <i class="fab fa-whatsapp"></i> Choisir
-                    </a>
-                </div>
-
-                <div class="feature-card" style="background: #fffde7; border-color: var(--accent-color);">
-                    <div>
-                        <h3 style="margin: 0; color: #333;">Pack Découverte</h3>
-                        <p style="color: #666; font-size: 0.9em;">2 cailles de chair + 18 œufs</p>
-                        <span class="price-tag">3 500 FCFA</span>
-                    </div>
-                    <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20Pack(s)%20Decouverte%20(3500F%20l%27unite)." class="btn-card">
-                        <i class="fab fa-whatsapp"></i> Je goûte !
+                        <i class="fab fa-whatsapp"></i> Commander
                     </a>
                 </div>
             </div>
@@ -595,36 +517,24 @@
 
     <!-- SECTION 2 : LA VIANDE -->
     <section id="viande">
-        <h2><i class="fas fa-drumstick-bite"></i> Viande de caille : Prêtes à cuire & Réformes</h2>
+        <h2><i class="fas fa-drumstick-bite"></i> Viande de caille : Cailles de réforme</h2>
         <p>Marre du poulet standard ? Épatez vos invités ou diversifiez votre menu de maquis avec nos cailles de qualité.</p>
         <div style="text-align: left;">
             <ul>
-                <li><strong>Cailles de chair (Prêtes à cuire) :</strong> Plumées et vidées méticuleusement. Chair délicate, très pauvre en cholestérol avec un goût subtil de gibier.</li>
-                <li><strong>Cailles de réforme (1 000 FCFA l'unité) :</strong> Une volaille économique au goût authentique, parfaite pour les grillades en famille ou pour les gérants de maquis.</li>
+                <li><strong>Cailles de réforme (1 200 FCFA l'unité) :</strong> Plumées et vidées méticuleusement. Une volaille économique au goût authentique, très pauvre en cholestérol, parfaite pour les grillades en famille ou pour les gérants de maquis.</li>
             </ul>
         </div>
         
-        <!-- TARIFS DE LA VIANDE -->
-        <div class="features-grid" style="justify-content: center;">
-            <div class="feature-card">
-                <div>
-                    <h3 style="margin: 0; color: #333;">Cailles de chair</h3>
-                    <p style="color: #666; font-size: 0.9em;">Le lot de 4 (prêtes à cuire)</p>
-                    <span class="price-tag">4 500 FCFA</span>
-                </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20lot(s)%20de%204%20cailles%20de%20chair%20(4500F%20l%27unite)." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
-                </a>
-            </div>
-
+        <!-- TARIF DE LA VIANDE (centré) -->
+        <div class="features-grid" style="max-width: 350px; margin: 25px auto 0;">
             <div class="feature-card">
                 <div>
                     <h3 style="margin: 0; color: #333;">Cailles de réforme</h3>
                     <p style="color: #666; font-size: 0.9em;">Viande économique (l'unité)</p>
-                    <span class="price-tag">1 000 FCFA</span>
+                    <span class="price-tag">1 200 FCFA</span>
                 </div>
-                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20caille(s)%20de%20reforme%20(1000F%20l%27unite)." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
+                <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20caille(s)%20de%20reforme%20(1200F%20l%27unite)." class="btn-card">
+                    <i class="fab fa-whatsapp"></i> Demander la disponibilité
                 </a>
             </div>
         </div>
@@ -639,7 +549,7 @@
 
     <!-- SECTION 3 : L'ÉLEVAGE -->
     <section id="elevage">
-        <h2><i class="fas fa-kiwi-bird"></i> Élevage : Œufs fécondés, Cailleteaux & Familles</h2>
+        <h2><i class="fas fa-kiwi-bird"></i> Élevage : Cailleteaux, Familles & Œufs fécondés</h2>
         <p>Vous lancez votre élevage dans votre cour ou de manière professionnelle ? Ne prenez pas de risques avec des sujets de qualité douteuse.</p>
         <ul>
             <li><strong>Cailleteaux (1 à 3 jours & 2 semaines) :</strong> Sujets vigoureux issus de nos meilleures souches. Rejoignez notre groupe WhatsApp "Disponibilités Cailleteaux Ouaga" pour réserver votre lot avant même l'éclosion !</li>
@@ -657,7 +567,7 @@
                     <span class="price-tag">300 FCFA</span>
                 </div>
                 <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20cailleteau(x)%20de%201%20a%203%20jours%20(300F%20l%27unite)." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
+                    <i class="fab fa-whatsapp"></i> Demander la disponibilité
                 </a>
             </div>
 
@@ -668,7 +578,7 @@
                     <span class="price-tag">600 FCFA</span>
                 </div>
                 <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20cailleteau(x)%20de%202%20semaines%20(600F%20l%27unite)." class="btn-card">
-                    <i class="fab fa-whatsapp"></i> Choisir
+                    <i class="fab fa-whatsapp"></i> Demander la disponibilité
                 </a>
             </div>
 
@@ -679,7 +589,7 @@
                     <span class="price-tag">15 000 FCFA</span>
                 </div>
                 <a href="https://wa.me/22678916975?text=Bonjour,%20je%20souhaite%20commander%20...%20famille(s)%20de%20cailles%20Texas%20(15000F%20l%27unite)." class="btn-card" style="background-color: #f9a825;">
-                    <i class="fab fa-whatsapp"></i> Choisir
+                    <i class="fab fa-whatsapp"></i> Demander la disponibilité
                 </a>
             </div>
         </div>
@@ -771,7 +681,7 @@
             <div class="testimonial-box" style="flex: 1; min-width: 250px;">
                 <div style="color: #fbc02d; font-size: 1.2em; margin-bottom: 5px;">★ ★ ★ ★ ★</div>
                 <i class="fas fa-quote-left" style="color: var(--primary-color); opacity: 0.5;"></i>
-                <p style="font-style: italic; margin: 10px 0;">"J'ai pris le pack découverte pour goûter. La viande était bien nettoyée et savoureuse. Je recommande."</p>
+                <p style="font-style: italic; margin: 10px 0;">"J'ai pris des cailles pour goûter. La viande était bien nettoyée et savoureuse. Je recommande."</p>
                 <p style="margin-bottom: 0;"><strong>- Mme. Sore</strong></p>
             </div>
 
