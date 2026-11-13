@@ -290,6 +290,28 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
+        /* BOUTON FACEBOOK VALORISÉ */
+        .btn-facebook {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #1877F2;
+            color: #ffffff !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+        }
+        .btn-facebook:hover {
+            background-color: #1464cc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(24, 119, 242, 0.45);
+        }
+
         /* Listes */
         ul {
             list-style: none;
@@ -723,12 +745,11 @@
     <p>
         Mangez sain, mangez local <i class="fas fa-heart" style="color: #e53935;"></i>
     </p>
-    <p style="margin-top: 10px;">
-        Suivez-nous : 
-        <a href="https://web.facebook.com/profile.php?id=61585685010615" style="color: #fff; text-decoration: none; margin-left: 5px; font-size: 1.2em;" target="_blank">
-            <i class="fab fa-facebook"></i>
+    <div>
+        <a href="https://web.facebook.com/profile.php?id=61585685010615" class="btn-facebook" target="_blank">
+            <i class="fab fa-facebook"></i> Suivez-nous sur Facebook
         </a>
-    </p>
+    </div>
 </footer>
 
 <!-- Bouton flottant WhatsApp -->
