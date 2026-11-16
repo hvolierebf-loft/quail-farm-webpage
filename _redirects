@@ -1,0 +1,6 @@
+# Liens courts pour les publications Facebook (Cloudflare Pages)
+# Chaque ligne : /lien-court  /destination  302
+/pub       /?src=facebook-pub          302
+/frais     /?src=facebook-pub-frais    302
+/fecondes  /?src=facebook-pub-fecondes 302
+/fb        /?src=facebook              302
